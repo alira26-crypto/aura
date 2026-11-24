@@ -72,6 +72,6 @@ document.querySelectorAll('#st button').forEach(b=>b.onclick=()=>{S=+b.dataset.i
 document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{who=who===c.dataset.v?'':c.dataset.v;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.v===who))});
 const p=new URLSearchParams(location.search),bill=p.get('bill')||'',pre=p.get('staff')||'';if(pre){document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.v.toLowerCase()===pre.toLowerCase())c.click()})}
 document.getElementById('go').onclick=()=>{if(!S)return;const t=document.getElementById('tx').value.trim();
- const msg=`*Aura Studio – Client Review*\n${bill?'Bill: '+bill+'\n':''}Rating: ${S}/5 ${'⭐'.repeat(S)}\n${t?'Comment: '+t+'\n':''}`;
+ const msg=`*Aura Studio – Client Review*\n${bill?'Bill: '+bill+'\n':''}Rating: ${S}/5 ${'★'.repeat(S)+'☆'.repeat(5-S)}\n${t?'Comment: '+t+'\n':''}`;
  window.open('https://wa.me/'+W+'?text='+encodeURIComponent(msg),'_blank');document.getElementById('form').style.display='none';document.getElementById('ok').style.display='block'};
 </script></body></html>
